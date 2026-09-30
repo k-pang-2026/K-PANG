@@ -1,0 +1,33 @@
+seed: 42
+paths:
+  data_dir: data
+  model_dir: models
+simulator:
+  n_products: 50000
+  n_users: 10000
+  n_events: 1000000
+  event_types: [search, view, cart, purchase]
+  personas:
+    trendsetter: {ratio: 0.15, price_sensitivity: 0.3, cvr: 0.05}
+    pragmatist:  {ratio: 0.20, price_sensitivity: 0.6, cvr: 0.04}
+    bargain:     {ratio: 0.20, price_sensitivity: 0.9, cvr: 0.03}
+    brand_loyal: {ratio: 0.15, price_sensitivity: 0.2, cvr: 0.06}
+    impulsive:   {ratio: 0.15, price_sensitivity: 0.5, cvr: 0.08}
+    careful:     {ratio: 0.15, price_sensitivity: 0.7, cvr: 0.02}
+search:
+  clip_model: openai/clip-vit-base-patch32
+  batch_size: 32
+  top_k: 10
+  faiss: {type: IVFPQ, nlist: 256, m: 16, nprobe: 16}
+recommend:
+  candidate_k: 300
+  top_n: 10
+  mab: {algo: epsilon_greedy, epsilon: 0.1}
+  new_item_days: 7
+  max_consecutive_same_category: 2
+  cold_start_min_events: 5
+split: {train: 0.8, valid: 0.1, test: 0.1}
+ct:
+  hitrate_threshold: 0.20
+  retrain_log_threshold: 10000
+redis: {host: redis, port: 6379}

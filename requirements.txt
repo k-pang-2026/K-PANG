@@ -1,0 +1,25 @@
+# Serving
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+# Dashboard
+streamlit
+plotly
+# ML
+transformers
+pillow
+faiss-cpu
+deepctr-torch
+scikit-learn
+numpy
+pandas
+scipy
+rank-bm25
+# Feature Store
+redis
+# Config / Quality
+pyyaml
+python-dotenv
+pytest
+mypy
