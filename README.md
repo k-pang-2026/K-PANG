@@ -38,11 +38,7 @@
 
 ```bash
 # 1. 저장소 받기
-<<<<<<< Updated upstream
 git clone https://github.com/<계정>/mm-recsys.git
-=======
-git clone https://github.com/k-pang-2026/k-pang.git
->>>>>>> Stashed changes
 cd mm-recsys
 
 # 2. 커밋 메시지 템플릿 적용 (최초 1회)
